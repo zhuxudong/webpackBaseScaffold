@@ -1,7 +1,7 @@
 {
   "name": "webpackBaseScaffold",
   "version": "1.0.0",
-  "description": "a 3d-face that is filled with technology,and can rotate follow your mouse",
+  "description": "a webpack scaffold",
   "main": "dist/app.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --inline --progress --hot --config ./build/webpack.config.js",
