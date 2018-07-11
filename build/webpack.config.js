@@ -30,8 +30,8 @@ let config = {
   module: {
     rules: [
       {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
-      {test: /\.css/, use: ["style-loader", "css-loader"]},
-      {test: /\.less$/, use: ["style-loader", "css-loader", "less-loader"]},
+      {test: /\.css/, use: ["style-loader", "css-loader", "postcss-loader"]},
+      {test: /\.less$/, use: ["style-loader", "css-loader", "postcss-loader", "less-loader"]},
       {test: /\.html$/, loader: "text-loader"},
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, use: [
