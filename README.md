@@ -27,10 +27,11 @@ npm run build
 * 哈希命名,防止版本缓存
 * 代码压缩
 * 图片压缩(目前使用ImagePlugin)
-
+* CSS浏览器兼容
 
 # 配置
-* 使用单配制文件方式，根据NODE_ENV变量来判断开发环境还是生产环境
+* build/webpack.config.js根据NODE_ENV变量来判断开发环境还是生产环境
 * 默认只有生产环境进行代码压缩
 * 默认开发/生产环境都进行图片压缩
+* .browserslistrc进行兼容浏览器配置
 
