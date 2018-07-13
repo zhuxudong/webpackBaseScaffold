@@ -1,7 +1,7 @@
 /**测试urlLoader*/
 import url from './test.jpg'
 /**测试cssLoader*/
-// import './test.css'
+import './test.css'
 /**测试lessLoader*/
 import './test.less'
 

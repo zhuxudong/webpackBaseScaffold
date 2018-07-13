@@ -28,6 +28,7 @@ npm run build
 * 代码压缩
 * 图片压缩(目前使用ImagePlugin)
 * CSS浏览器兼容
+* 抽离CSS文件
 
 # 配置
 * build/webpack.config.js根据NODE_ENV变量来判断开发环境还是生产环境

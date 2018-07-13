@@ -30,8 +30,20 @@ let config = {
   module: {
     rules: [
       {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
-      {test: /\.css/, use: ["style-loader", "css-loader", "postcss-loader"]},
-      {test: /\.less$/, use: ["style-loader", "css-loader", "postcss-loader", "less-loader"]},
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ["css-loader", "postcss-loader"]
+        })
+      },
+      {
+        test: /\.less/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ["css-loader", "postcss-loader", "less-loader"]
+        })
+      },
       {test: /\.html$/, loader: "text-loader"},
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, use: [
@@ -111,37 +123,23 @@ if (isDev) {
 }
 /**生产环境*/
 else {
-  // config.module.rules.push(
-  //   {
-  //     test: /\.css$/,
-  //     use: ExtractTextPlugin.extract({
-  //       fallback: "style-loader",
-  //       use: "css-loader"
-  //     })
-  //   });
   config.plugins.push(
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: base.compress
       }
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../', base.copyDir),
-        to: base.copyDir,
-        ignore: ['.*']
-      }
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, '../', base.copyDir),
+      to: base.copyDir,
+      ignore: ['.*']
+    }
     ]),
-    // new ExtractTextPlugin({
-    //   filename: path.join('css/[name].[contenthash].css'),
-    //   allChunks: true,
-    // })
+    new ExtractTextPlugin('css/[name].[contenthash:7].css'),
     new webpack.optimize.CommonsChunkPlugin({
       name: "common",
       minChunks: 2,
       minSize: 1
-    })
-  )
-
+    }))
   module.exports = config;
 }
