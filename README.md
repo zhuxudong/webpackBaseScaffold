@@ -7,6 +7,7 @@ git clone https://github.com/zhuxudong/webpackBaseScaffold.git
 npm install
 ```
 
+
 # 开发
 ```
 npm run dev
@@ -35,4 +36,5 @@ npm run build
 * 默认只有生产环境进行代码压缩
 * 默认开发/生产环境都进行图片压缩
 * .browserslistrc进行兼容浏览器配置
+* 入口在src/app.js,/test,/static,/dist下面是测试文档,开发时可以删除
 
