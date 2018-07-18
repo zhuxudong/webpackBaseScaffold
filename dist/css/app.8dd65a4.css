@@ -1,9 +1,0 @@
-body{
-    background:aquamarine;
-}body {
-  background: aquamarine;
-  -webkit-animation: all 1s;
-          animation: all 1s;
-  display: -webkit-box;
-  display: flex;
-}

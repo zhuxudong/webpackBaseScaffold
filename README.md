@@ -30,11 +30,12 @@ npm run build
 * 图片压缩(目前使用ImagePlugin)
 * CSS浏览器兼容
 * 抽离CSS文件
+* TypeScript
 
 # 配置
+* 入口在src/app.js,/test,/static,/dist下面是测试文档,开发时可以删除
 * build/webpack.config.js根据NODE_ENV变量来判断开发环境还是生产环境
 * 默认只有生产环境进行代码压缩
 * 默认开发/生产环境都进行图片压缩
 * .browserslistrc进行兼容浏览器配置
-* 入口在src/app.js,/test,/static,/dist下面是测试文档,开发时可以删除
-
+* tsconfig.json 配置ts编译规则

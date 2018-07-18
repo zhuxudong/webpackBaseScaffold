@@ -13,7 +13,8 @@ const base = require('./base')
 let config = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: ["babel-polyfill", "./src/app.js"]
+    app: ["babel-polyfill", "./src/app.js"],
+    test: ["./src/app.ts"]
   },
   output: {
     path: path.resolve(__dirname, "../dist"),
@@ -27,9 +28,11 @@ let config = {
       '@': path.resolve(__dirname, '../src')
     }
   },
+  externals: {},
   module: {
     rules: [
       {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
+      {test: /\.ts$/, loader: "ts-loader"},
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -79,7 +82,10 @@ let config = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({template: path.resolve(__dirname, '../src/temp.html')})
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, '../src/temp.html'),
+      excludeChunks: ["test"]
+    })
   ]
 }
 /**开发环境*/
