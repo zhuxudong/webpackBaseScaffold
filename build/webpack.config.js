@@ -31,6 +31,7 @@ let config = {
   externals: {},
   module: {
     rules: [
+      {test: /\.(htm|html)$/i, loader: "html-withimg-loader"},
       {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
       {test: /\.ts$/, loader: "ts-loader"},
       {
@@ -83,7 +84,7 @@ let config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/temp.html'),
+      template: "html-withimg-loader!" + path.resolve(__dirname, '../src/temp.html'),
       excludeChunks: ["test"]
     })
   ]

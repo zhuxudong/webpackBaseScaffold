@@ -1,23 +1,25 @@
 # webpackBaseScaffold
-webpack配置脚手架,我写她用来作为以后项目的初始模板,适用于SPA/MPA等场景
+webpack3.6配置脚手架
 
-# 开始
+## Why
+有时候新建仓库,既想要系统化配置,又不想要vue-cli等重量级配置,所以自定义一套适用小项目的基础脚手架
+## 开始
 ```
 git clone https://github.com/zhuxudong/webpackBaseScaffold.git
 npm install
 ```
 
 
-# 开发
+## 开发
 ```
 npm run dev
 ```
 
-# 发布
+## 发布
 ```
 npm run build
 ```
-# 支持功能
+## 支持功能
 * 各种模块语法:commonJS,AMD,UMD,ES6模块
 * ES新语法,如class 
 * ES新API,如Promise
@@ -32,7 +34,7 @@ npm run build
 * 抽离CSS文件
 * TypeScript
 
-# 配置
+## 配置
 * 入口在src/app.js,/test,/static,/dist下面是测试文档,开发时可以删除
 * build/webpack.config.js根据NODE_ENV变量来判断开发环境还是生产环境
 * 默认只有生产环境进行代码压缩
