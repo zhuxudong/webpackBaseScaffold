@@ -48,7 +48,6 @@ let config = {
           use: ["css-loader", "postcss-loader", "less-loader"]
         })
       },
-      {test: /\.html$/, loader: "text-loader"},
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, use: [
           {
