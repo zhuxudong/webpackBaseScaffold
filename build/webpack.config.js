@@ -83,7 +83,7 @@ let config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "html-withimg-loader!" + path.resolve(__dirname, '../src/temp.html'),
+      template: path.resolve(__dirname, '../src/temp.html'),
       excludeChunks: ["test"]
     })
   ]
