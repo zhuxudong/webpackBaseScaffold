@@ -33,7 +33,7 @@ let config = {
     rules: [
       {test: /\.(htm|html)$/i, loader: "html-withimg-loader"},
       {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
-      {test: /\.ts$/, loader: "ts-loader"},
+      {test: /\.ts$/, exclude: /node_modules/, loader: "ts-loader"},
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -101,6 +101,7 @@ if (isDev) {
       errors: true
     },
     watchOptions: {
+      ignored: /node_modules/,
       poll: false,
     }
   }
