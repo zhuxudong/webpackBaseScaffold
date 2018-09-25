@@ -82,6 +82,7 @@ let config = {
     ]
   },
   plugins: [
+    new ExtractTextPlugin('css/[name].[contenthash:7].css'),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/temp.html'),
       excludeChunks: ["test"]
@@ -143,7 +144,6 @@ else {
       ignore: ['.*']
     }
     ]),
-    new ExtractTextPlugin('css/[name].[contenthash:7].css'),
     new webpack.optimize.CommonsChunkPlugin({
       name: "common",
       minChunks: 2,
